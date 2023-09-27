@@ -1,6 +1,5 @@
 from tortoise import fields, models
 
-
 class Users(models.Model):
     id = fields.IntField(pk=True)
     username = fields.CharField(max_length=20, unique=True)
@@ -20,3 +19,8 @@ class Notes(models.Model):
 
     def __str__(self):
         return f"{self.title}, {self.author_id} on {self.created_at}"
+
+class RoadLoad(models.Model):
+    id = fields.IntField(pk=True)
+    road_name = fields.CharField(max_length=64)
+    load_value = fields.FloatField()

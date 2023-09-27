@@ -18,7 +18,22 @@
       class="yandex-container">
       <ymap-marker 
         marker-id="123" 
-        :coords="coords"
+        :coords="coords_marker['Успенка']"
+        :marker-events="['click']"
+      ></ymap-marker>
+      <ymap-marker 
+        marker-id="123" 
+        :coords="coords_marker['Шрамко']"
+        :marker-events="['click']"
+      ></ymap-marker>
+      <ymap-marker 
+        marker-id="123" 
+        :coords="coords_marker['Новоазовск']"
+        :marker-events="['click']"
+      ></ymap-marker>
+      <ymap-marker 
+        marker-id="123" 
+        :coords="coords_marker['Мариновка']"
         :marker-events="['click']"
       ></ymap-marker>
     </yandex-map>
@@ -32,7 +47,12 @@ export default defineComponent({
   name: 'Home',
   data() {
     return {
-      coords: [55.753215, 37.622504],
+      coords: [47.698823, 38.663239],
+      coords_marker: {"Успенка" : [47.698823, 38.661239],
+                      "Шрамко": [47.616825, 38.402481],           //Ростовская область, Матвеево-Курганский район, хутор Шрамко, Пограничная улица
+                      "Новоазовск": [47.161477, 38.242597],       //АПП Весело-Вознесенка
+                      'Мариновка': [47.856931, 38.857838]         //АПП Куйбышево 
+                    },                  
       zoom: 10,
       controls: ["zoomControl", "geolocationControl", "searchControl"],
       behaviors: ["drag"]
